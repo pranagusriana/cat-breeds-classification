@@ -56,7 +56,9 @@ const image_selector = document.getElementById('image-selector');
 const predict_result = document.getElementById('prediction-result');
 
 async function initialize() {
+    predict_result.innerText = 'Loading ..., wait until the model is loaded';
     model = await tf.loadLayersModel(MODEL_PATH);
+    predict_result.innerText = 'Model loaded ^v^';
 }
 
 initialize();
